@@ -1,6 +1,6 @@
 ﻿namespace THWeddingPlanner
 {
-    partial class Form1
+    partial class Gasten
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Gasten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 418);
-            this.Name = "Form1";
-            this.Text = "Wedding Planner";
+            this.ClientSize = new System.Drawing.Size(550, 406);
+            this.Name = "Gasten";
+            this.Text = "Gasten";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +44,3 @@
         #endregion
     }
 }
-
