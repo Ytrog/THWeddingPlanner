@@ -166,6 +166,7 @@
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Uitnodigen voor";
             // 
             // label5
             // 

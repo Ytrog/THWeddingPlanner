@@ -16,5 +16,11 @@ namespace THWeddingPlanner
         {
             InitializeComponent();
         }
+
+        private void tsbGasten_Click(object sender, EventArgs e)
+        {
+            Gasten gastenForm = new Gasten();
+            gastenForm.ShowDialog(this);
+        }
     }
 }
