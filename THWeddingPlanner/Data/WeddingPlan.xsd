@@ -30,6 +30,12 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Straatnaam" msprop:Generator_ColumnVarNameInTable="columnStraatnaam" msprop:Generator_ColumnPropNameInRow="Straatnaam" msprop:Generator_ColumnPropNameInTable="StraatnaamColumn" msprop:Generator_UserColumnName="Straatnaam" type="xs:string" minOccurs="0" />
+              <xs:element name="Huisnummer" msprop:Generator_ColumnVarNameInTable="columnHuisnummer" msprop:Generator_ColumnPropNameInRow="Huisnummer" msprop:Generator_ColumnPropNameInTable="HuisnummerColumn" msprop:Generator_UserColumnName="Huisnummer" type="xs:string" minOccurs="0" />
+              <xs:element name="Toevoeging" msprop:Generator_ColumnVarNameInTable="columnToevoeging" msprop:Generator_ColumnPropNameInRow="Toevoeging" msprop:Generator_ColumnPropNameInTable="ToevoegingColumn" msprop:Generator_UserColumnName="Toevoeging" type="xs:string" minOccurs="0" />
+              <xs:element name="Postcode" msprop:Generator_ColumnVarNameInTable="columnPostcode" msprop:Generator_ColumnPropNameInRow="Postcode" msprop:Generator_ColumnPropNameInTable="PostcodeColumn" msprop:Generator_UserColumnName="Postcode" type="xs:string" minOccurs="0" />
+              <xs:element name="Plaats" msprop:Generator_ColumnVarNameInTable="columnPlaats" msprop:Generator_ColumnPropNameInRow="Plaats" msprop:Generator_ColumnPropNameInTable="PlaatsColumn" msprop:Generator_UserColumnName="Plaats" type="xs:string" minOccurs="0" />
+              <xs:element name="Land" msprop:Generator_ColumnVarNameInTable="columnLand" msprop:Generator_ColumnPropNameInRow="Land" msprop:Generator_ColumnPropNameInTable="LandColumn" msprop:Generator_UserColumnName="Land" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -37,6 +43,8 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Naam" msprop:Generator_ColumnVarNameInTable="columnNaam" msprop:Generator_ColumnPropNameInRow="Naam" msprop:Generator_ColumnPropNameInTable="NaamColumn" msprop:Generator_UserColumnName="Naam" type="xs:string" minOccurs="0" />
+              <xs:element name="Volgorde" msprop:Generator_ColumnVarNameInTable="columnVolgorde" msprop:Generator_ColumnPropNameInRow="Volgorde" msprop:Generator_ColumnPropNameInTable="VolgordeColumn" msprop:Generator_UserColumnName="Volgorde" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

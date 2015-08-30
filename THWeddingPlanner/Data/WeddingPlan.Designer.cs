@@ -748,6 +748,18 @@ namespace THWeddingPlanner.Data {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnStraatnaam;
+            
+            private global::System.Data.DataColumn columnHuisnummer;
+            
+            private global::System.Data.DataColumn columnToevoeging;
+            
+            private global::System.Data.DataColumn columnPostcode;
+            
+            private global::System.Data.DataColumn columnPlaats;
+            
+            private global::System.Data.DataColumn columnLand;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AdresDataTable() {
@@ -791,6 +803,54 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StraatnaamColumn {
+                get {
+                    return this.columnStraatnaam;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HuisnummerColumn {
+                get {
+                    return this.columnHuisnummer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ToevoegingColumn {
+                get {
+                    return this.columnToevoeging;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PostcodeColumn {
+                get {
+                    return this.columnPostcode;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PlaatsColumn {
+                get {
+                    return this.columnPlaats;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LandColumn {
+                get {
+                    return this.columnLand;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -826,10 +886,16 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdresRow AddAdresRow() {
+            public AdresRow AddAdresRow(string Straatnaam, string Huisnummer, string Toevoeging, string Postcode, string Plaats, string Land) {
                 AdresRow rowAdresRow = ((AdresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null};
+                        null,
+                        Straatnaam,
+                        Huisnummer,
+                        Toevoeging,
+                        Postcode,
+                        Plaats,
+                        Land};
                 rowAdresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAdresRow);
                 return rowAdresRow;
@@ -860,6 +926,12 @@ namespace THWeddingPlanner.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnStraatnaam = base.Columns["Straatnaam"];
+                this.columnHuisnummer = base.Columns["Huisnummer"];
+                this.columnToevoeging = base.Columns["Toevoeging"];
+                this.columnPostcode = base.Columns["Postcode"];
+                this.columnPlaats = base.Columns["Plaats"];
+                this.columnLand = base.Columns["Land"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,6 +939,18 @@ namespace THWeddingPlanner.Data {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnStraatnaam = new global::System.Data.DataColumn("Straatnaam", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStraatnaam);
+                this.columnHuisnummer = new global::System.Data.DataColumn("Huisnummer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHuisnummer);
+                this.columnToevoeging = new global::System.Data.DataColumn("Toevoeging", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnToevoeging);
+                this.columnPostcode = new global::System.Data.DataColumn("Postcode", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostcode);
+                this.columnPlaats = new global::System.Data.DataColumn("Plaats", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPlaats);
+                this.columnLand = new global::System.Data.DataColumn("Land", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLand);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1007,6 +1091,10 @@ namespace THWeddingPlanner.Data {
             
             private global::System.Data.DataColumn columnId;
             
+            private global::System.Data.DataColumn columnNaam;
+            
+            private global::System.Data.DataColumn columnVolgorde;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TierDataTable() {
@@ -1050,6 +1138,22 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NaamColumn {
+                get {
+                    return this.columnNaam;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VolgordeColumn {
+                get {
+                    return this.columnVolgorde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1085,10 +1189,12 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TierRow AddTierRow() {
+            public TierRow AddTierRow(string Naam, string Volgorde) {
                 TierRow rowTierRow = ((TierRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null};
+                        null,
+                        Naam,
+                        Volgorde};
                 rowTierRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTierRow);
                 return rowTierRow;
@@ -1119,6 +1225,8 @@ namespace THWeddingPlanner.Data {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
+                this.columnNaam = base.Columns["Naam"];
+                this.columnVolgorde = base.Columns["Volgorde"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1126,6 +1234,10 @@ namespace THWeddingPlanner.Data {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
+                this.columnNaam = new global::System.Data.DataColumn("Naam", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNaam);
+                this.columnVolgorde = new global::System.Data.DataColumn("Volgorde", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVolgorde);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -1496,6 +1608,174 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Straatnaam {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.StraatnaamColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Straatnaam\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.StraatnaamColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Huisnummer {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.HuisnummerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Huisnummer\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.HuisnummerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Toevoeging {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.ToevoegingColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Toevoeging\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.ToevoegingColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Postcode {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.PostcodeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Postcode\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.PostcodeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Plaats {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.PlaatsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Plaats\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.PlaatsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Land {
+                get {
+                    try {
+                        return ((string)(this[this.tableAdres.LandColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Land\' in table \'Adres\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAdres.LandColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStraatnaamNull() {
+                return this.IsNull(this.tableAdres.StraatnaamColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStraatnaamNull() {
+                this[this.tableAdres.StraatnaamColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHuisnummerNull() {
+                return this.IsNull(this.tableAdres.HuisnummerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHuisnummerNull() {
+                this[this.tableAdres.HuisnummerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsToevoegingNull() {
+                return this.IsNull(this.tableAdres.ToevoegingColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetToevoegingNull() {
+                this[this.tableAdres.ToevoegingColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPostcodeNull() {
+                return this.IsNull(this.tableAdres.PostcodeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPostcodeNull() {
+                this[this.tableAdres.PostcodeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPlaatsNull() {
+                return this.IsNull(this.tableAdres.PlaatsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPlaatsNull() {
+                this[this.tableAdres.PlaatsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLandNull() {
+                return this.IsNull(this.tableAdres.LandColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLandNull() {
+                this[this.tableAdres.LandColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GastRow[] GetGastRows() {
                 if ((this.Table.ChildRelations["FK_Adres_Gast"] == null)) {
                     return new GastRow[0];
@@ -1529,6 +1809,62 @@ namespace THWeddingPlanner.Data {
                 set {
                     this[this.tableTier.IdColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Naam {
+                get {
+                    try {
+                        return ((string)(this[this.tableTier.NaamColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Naam\' in table \'Tier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTier.NaamColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Volgorde {
+                get {
+                    try {
+                        return ((string)(this[this.tableTier.VolgordeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Volgorde\' in table \'Tier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTier.VolgordeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNaamNull() {
+                return this.IsNull(this.tableTier.NaamColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNaamNull() {
+                this[this.tableTier.NaamColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsVolgordeNull() {
+                return this.IsNull(this.tableTier.VolgordeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetVolgordeNull() {
+                this[this.tableTier.VolgordeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

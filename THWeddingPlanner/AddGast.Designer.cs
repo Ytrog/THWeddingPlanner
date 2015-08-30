@@ -39,7 +39,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbTier = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -140,13 +140,13 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Dieet/Allergie";
             // 
-            // comboBox2
+            // cmbTier
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(81, 152);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(277, 21);
-            this.comboBox2.TabIndex = 17;
+            this.cmbTier.FormattingEnabled = true;
+            this.cmbTier.Location = new System.Drawing.Point(81, 152);
+            this.cmbTier.Name = "cmbTier";
+            this.cmbTier.Size = new System.Drawing.Size(277, 21);
+            this.cmbTier.TabIndex = 17;
             // 
             // label7
             // 
@@ -207,7 +207,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cmbTier);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
@@ -239,7 +239,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbTier;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
