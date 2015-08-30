@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtVoornaam = new System.Windows.Forms.TextBox();
+            this.txtAchternaam = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAdres = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddAddress = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnManageTiers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtVoornaam
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtVoornaam.Location = new System.Drawing.Point(82, 29);
+            this.txtVoornaam.Name = "txtVoornaam";
+            this.txtVoornaam.Size = new System.Drawing.Size(396, 20);
+            this.txtVoornaam.TabIndex = 0;
             // 
-            // textBox2
+            // txtAchternaam
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(396, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtAchternaam.Location = new System.Drawing.Point(82, 55);
+            this.txtAchternaam.Name = "txtAchternaam";
+            this.txtAchternaam.Size = new System.Drawing.Size(396, 20);
+            this.txtAchternaam.TabIndex = 1;
             // 
             // label1
             // 
@@ -78,13 +79,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Achternaam";
             // 
-            // comboBox1
+            // cmbAdres
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 82);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbAdres.FormattingEnabled = true;
+            this.cmbAdres.Location = new System.Drawing.Point(82, 82);
+            this.cmbAdres.Name = "cmbAdres";
+            this.cmbAdres.Size = new System.Drawing.Size(276, 21);
+            this.cmbAdres.TabIndex = 4;
             // 
             // label3
             // 
@@ -104,27 +105,6 @@
             this.btnAddAddress.Text = "Voeg adres toe";
             this.btnAddAddress.UseVisualStyleBackColor = true;
             this.btnAddAddress.Click += new System.EventHandler(this.btnAddAddress_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Leeftijd";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(82, 110);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 8;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            18,
-            0,
-            0,
-            0});
             // 
             // label5
             // 
@@ -165,7 +145,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(81, 152);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(277, 21);
             this.comboBox2.TabIndex = 17;
             // 
             // label7
@@ -177,29 +157,70 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Uitnodigen voor";
             // 
+            // btnOk
+            // 
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.Location = new System.Drawing.Point(19, 452);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 19;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(101, 452);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(19, 116);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(53, 17);
+            this.checkBox1.TabIndex = 21;
+            this.checkBox1.Text = "Kind?";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // btnManageTiers
+            // 
+            this.btnManageTiers.Location = new System.Drawing.Point(365, 149);
+            this.btnManageTiers.Name = "btnManageTiers";
+            this.btnManageTiers.Size = new System.Drawing.Size(113, 23);
+            this.btnManageTiers.TabIndex = 22;
+            this.btnManageTiers.Text = "Beheer niveaus";
+            this.btnManageTiers.UseVisualStyleBackColor = true;
+            // 
             // AddGast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 452);
+            this.ClientSize = new System.Drawing.Size(493, 487);
+            this.Controls.Add(this.btnManageTiers);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnAddAddress);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbAdres);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAchternaam);
+            this.Controls.Add(this.txtVoornaam);
             this.Name = "AddGast";
             this.Text = "Voeg gast toe";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,20 +228,22 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtVoornaam;
+        private System.Windows.Forms.TextBox txtAchternaam;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAdres;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddAddress;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnManageTiers;
     }
 }

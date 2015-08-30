@@ -20,7 +20,10 @@ namespace THWeddingPlanner
         private void tsbAddGast_Click(object sender, EventArgs e)
         {
             AddGast addGastForm = new AddGast();
-            addGastForm.ShowDialog(this);
+            if ((addGastForm.ShowDialog(this) == System.Windows.Forms.DialogResult.OK))
+            {
+                
+            }
         }
     }
 }
