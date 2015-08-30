@@ -16,5 +16,11 @@ namespace THWeddingPlanner
         {
             InitializeComponent();
         }
+
+        private void btnAddAddress_Click(object sender, EventArgs e)
+        {
+            AddAdres addressForm = new AddAdres();
+            addressForm.ShowDialog(this);
+        }
     }
 }

@@ -28,7 +28,11 @@ namespace THWeddingPlanner.Data {
         
         private AdresDataTable tableAdres;
         
-        private global::System.Data.DataRelation relationFK_Gast_Adres;
+        private TierDataTable tableTier;
+        
+        private global::System.Data.DataRelation relationFK_Tier_Gast;
+        
+        private global::System.Data.DataRelation relationFK_Adres_Gast;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -63,6 +67,9 @@ namespace THWeddingPlanner.Data {
                 }
                 if ((ds.Tables["Adres"] != null)) {
                     base.Tables.Add(new AdresDataTable(ds.Tables["Adres"]));
+                }
+                if ((ds.Tables["Tier"] != null)) {
+                    base.Tables.Add(new TierDataTable(ds.Tables["Tier"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -99,6 +106,16 @@ namespace THWeddingPlanner.Data {
         public AdresDataTable Adres {
             get {
                 return this.tableAdres;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TierDataTable Tier {
+            get {
+                return this.tableTier;
             }
         }
         
@@ -175,6 +192,9 @@ namespace THWeddingPlanner.Data {
                 if ((ds.Tables["Adres"] != null)) {
                     base.Tables.Add(new AdresDataTable(ds.Tables["Adres"]));
                 }
+                if ((ds.Tables["Tier"] != null)) {
+                    base.Tables.Add(new TierDataTable(ds.Tables["Tier"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -220,7 +240,14 @@ namespace THWeddingPlanner.Data {
                     this.tableAdres.InitVars();
                 }
             }
-            this.relationFK_Gast_Adres = this.Relations["FK_Gast_Adres"];
+            this.tableTier = ((TierDataTable)(base.Tables["Tier"]));
+            if ((initTable == true)) {
+                if ((this.tableTier != null)) {
+                    this.tableTier.InitVars();
+                }
+            }
+            this.relationFK_Tier_Gast = this.Relations["FK_Tier_Gast"];
+            this.relationFK_Adres_Gast = this.Relations["FK_Adres_Gast"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,18 +262,31 @@ namespace THWeddingPlanner.Data {
             base.Tables.Add(this.tableGast);
             this.tableAdres = new AdresDataTable();
             base.Tables.Add(this.tableAdres);
+            this.tableTier = new TierDataTable();
+            base.Tables.Add(this.tableTier);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Gast_Adres", new global::System.Data.DataColumn[] {
-                        this.tableGast.AdresIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAdres.IdColumn});
-            this.tableAdres.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Tier_Gast", new global::System.Data.DataColumn[] {
+                        this.tableTier.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGast.TierIdColumn});
+            this.tableGast.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Gast_Adres = new global::System.Data.DataRelation("FK_Gast_Adres", new global::System.Data.DataColumn[] {
-                        this.tableGast.AdresIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAdres.IdColumn}, false);
-            this.Relations.Add(this.relationFK_Gast_Adres);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Adres_Gast", new global::System.Data.DataColumn[] {
+                        this.tableAdres.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGast.AdresIdColumn});
+            this.tableGast.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_Tier_Gast = new global::System.Data.DataRelation("FK_Tier_Gast", new global::System.Data.DataColumn[] {
+                        this.tableTier.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGast.TierIdColumn}, false);
+            this.Relations.Add(this.relationFK_Tier_Gast);
+            this.relationFK_Adres_Gast = new global::System.Data.DataRelation("FK_Adres_Gast", new global::System.Data.DataColumn[] {
+                        this.tableAdres.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGast.AdresIdColumn}, false);
+            this.Relations.Add(this.relationFK_Adres_Gast);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +298,12 @@ namespace THWeddingPlanner.Data {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeAdres() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTier() {
             return false;
         }
         
@@ -322,6 +368,9 @@ namespace THWeddingPlanner.Data {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void AdresRowChangeEventHandler(object sender, AdresRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TierRowChangeEventHandler(object sender, TierRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -336,6 +385,14 @@ namespace THWeddingPlanner.Data {
             private global::System.Data.DataColumn columnAchternaam;
             
             private global::System.Data.DataColumn columnAdresId;
+            
+            private global::System.Data.DataColumn columnTierId;
+            
+            private global::System.Data.DataColumn columnDieetAllergie;
+            
+            private global::System.Data.DataColumn columnBijzonderheden;
+            
+            private global::System.Data.DataColumn columnIsKind;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -404,6 +461,38 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TierIdColumn {
+                get {
+                    return this.columnTierId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DieetAllergieColumn {
+                get {
+                    return this.columnDieetAllergie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BijzonderhedenColumn {
+                get {
+                    return this.columnBijzonderheden;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IsKindColumn {
+                get {
+                    return this.columnIsKind;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -439,13 +528,23 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GastRow AddGastRow(string Id, string Voornaam, string Achternaam, string AdresId) {
+            public GastRow AddGastRow(string Voornaam, string Achternaam, AdresRow parentAdresRowByFK_Adres_Gast, TierRow parentTierRowByFK_Tier_Gast, string DieetAllergie, string Bijzonderheden, bool IsKind) {
                 GastRow rowGastRow = ((GastRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Voornaam,
                         Achternaam,
-                        AdresId};
+                        null,
+                        null,
+                        DieetAllergie,
+                        Bijzonderheden,
+                        IsKind};
+                if ((parentAdresRowByFK_Adres_Gast != null)) {
+                    columnValuesArray[3] = parentAdresRowByFK_Adres_Gast[0];
+                }
+                if ((parentTierRowByFK_Tier_Gast != null)) {
+                    columnValuesArray[4] = parentTierRowByFK_Tier_Gast[0];
+                }
                 rowGastRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGastRow);
                 return rowGastRow;
@@ -453,7 +552,7 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GastRow FindById(string Id) {
+            public GastRow FindById(int Id) {
                 return ((GastRow)(this.Rows.Find(new object[] {
                             Id})));
             }
@@ -479,29 +578,41 @@ namespace THWeddingPlanner.Data {
                 this.columnVoornaam = base.Columns["Voornaam"];
                 this.columnAchternaam = base.Columns["Achternaam"];
                 this.columnAdresId = base.Columns["AdresId"];
+                this.columnTierId = base.Columns["TierId"];
+                this.columnDieetAllergie = base.Columns["DieetAllergie"];
+                this.columnBijzonderheden = base.Columns["Bijzonderheden"];
+                this.columnIsKind = base.Columns["IsKind"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
                 this.columnVoornaam = new global::System.Data.DataColumn("Voornaam", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVoornaam);
                 this.columnAchternaam = new global::System.Data.DataColumn("Achternaam", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAchternaam);
-                this.columnAdresId = new global::System.Data.DataColumn("AdresId", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnAdresId = new global::System.Data.DataColumn("AdresId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdresId);
+                this.columnTierId = new global::System.Data.DataColumn("TierId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTierId);
+                this.columnDieetAllergie = new global::System.Data.DataColumn("DieetAllergie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDieetAllergie);
+                this.columnBijzonderheden = new global::System.Data.DataColumn("Bijzonderheden", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBijzonderheden);
+                this.columnIsKind = new global::System.Data.DataColumn("IsKind", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsKind);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("GastNameUnique", new global::System.Data.DataColumn[] {
                                 this.columnVoornaam,
                                 this.columnAchternaam}, false));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
-                                this.columnAdresId}, false));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
-                this.columnAdresId.Unique = true;
+                this.columnAdresId.AllowDBNull = false;
+                this.columnTierId.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -715,13 +826,10 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdresRow AddAdresRow(GastRow parentGastRowByFK_Gast_Adres) {
+            public AdresRow AddAdresRow() {
                 AdresRow rowAdresRow = ((AdresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null};
-                if ((parentGastRowByFK_Gast_Adres != null)) {
-                    columnValuesArray[0] = parentGastRowByFK_Gast_Adres[3];
-                }
                 rowAdresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAdresRow);
                 return rowAdresRow;
@@ -729,7 +837,7 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdresRow FindById(string Id) {
+            public AdresRow FindById(int Id) {
                 return ((AdresRow)(this.Rows.Find(new object[] {
                             Id})));
             }
@@ -757,10 +865,11 @@ namespace THWeddingPlanner.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
             }
@@ -890,6 +999,267 @@ namespace THWeddingPlanner.Data {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TierDataTable : global::System.Data.TypedTableBase<TierRow> {
+            
+            private global::System.Data.DataColumn columnId;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierDataTable() {
+                this.TableName = "Tier";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TierDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TierDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow this[int index] {
+                get {
+                    return ((TierRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TierRowChangeEventHandler TierRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TierRowChangeEventHandler TierRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TierRowChangeEventHandler TierRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TierRowChangeEventHandler TierRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTierRow(TierRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow AddTierRow() {
+                TierRow rowTierRow = ((TierRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null};
+                rowTierRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTierRow);
+                return rowTierRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow FindById(int Id) {
+                return ((TierRow)(this.Rows.Find(new object[] {
+                            Id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TierDataTable cln = ((TierDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TierDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnId = base.Columns["Id"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AllowDBNull = false;
+                this.columnId.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow NewTierRow() {
+                return ((TierRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TierRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TierRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TierRowChanged != null)) {
+                    this.TierRowChanged(this, new TierRowChangeEvent(((TierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TierRowChanging != null)) {
+                    this.TierRowChanging(this, new TierRowChangeEvent(((TierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TierRowDeleted != null)) {
+                    this.TierRowDeleted(this, new TierRowChangeEvent(((TierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TierRowDeleting != null)) {
+                    this.TierRowDeleting(this, new TierRowChangeEvent(((TierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTierRow(TierRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                WeddingPlan ds = new WeddingPlan();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TierDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class GastRow : global::System.Data.DataRow {
@@ -905,9 +1275,9 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Id {
+            public int Id {
                 get {
-                    return ((string)(this[this.tableGast.IdColumn]));
+                    return ((int)(this[this.tableGast.IdColumn]));
                 }
                 set {
                     this[this.tableGast.IdColumn] = value;
@@ -948,17 +1318,93 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string AdresId {
+            public int AdresId {
                 get {
-                    try {
-                        return ((string)(this[this.tableGast.AdresIdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdresId\' in table \'Gast\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableGast.AdresIdColumn]));
                 }
                 set {
                     this[this.tableGast.AdresIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TierId {
+                get {
+                    return ((int)(this[this.tableGast.TierIdColumn]));
+                }
+                set {
+                    this[this.tableGast.TierIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DieetAllergie {
+                get {
+                    try {
+                        return ((string)(this[this.tableGast.DieetAllergieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DieetAllergie\' in table \'Gast\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGast.DieetAllergieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Bijzonderheden {
+                get {
+                    try {
+                        return ((string)(this[this.tableGast.BijzonderhedenColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Bijzonderheden\' in table \'Gast\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGast.BijzonderhedenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsKind {
+                get {
+                    try {
+                        return ((bool)(this[this.tableGast.IsKindColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsKind\' in table \'Gast\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGast.IsKindColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow TierRow {
+                get {
+                    return ((TierRow)(this.GetParentRow(this.Table.ParentRelations["FK_Tier_Gast"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Tier_Gast"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AdresRow AdresRow {
+                get {
+                    return ((AdresRow)(this.GetParentRow(this.Table.ParentRelations["FK_Adres_Gast"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Adres_Gast"]);
                 }
             }
             
@@ -988,25 +1434,38 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsAdresIdNull() {
-                return this.IsNull(this.tableGast.AdresIdColumn);
+            public bool IsDieetAllergieNull() {
+                return this.IsNull(this.tableGast.DieetAllergieColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetAdresIdNull() {
-                this[this.tableGast.AdresIdColumn] = global::System.Convert.DBNull;
+            public void SetDieetAllergieNull() {
+                this[this.tableGast.DieetAllergieColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AdresRow[] GetAdresRows() {
-                if ((this.Table.ChildRelations["FK_Gast_Adres"] == null)) {
-                    return new AdresRow[0];
-                }
-                else {
-                    return ((AdresRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Gast_Adres"])));
-                }
+            public bool IsBijzonderhedenNull() {
+                return this.IsNull(this.tableGast.BijzonderhedenColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBijzonderhedenNull() {
+                this[this.tableGast.BijzonderhedenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIsKindNull() {
+                return this.IsNull(this.tableGast.IsKindColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIsKindNull() {
+                this[this.tableGast.IsKindColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1026,9 +1485,9 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Id {
+            public int Id {
                 get {
-                    return ((string)(this[this.tableAdres.IdColumn]));
+                    return ((int)(this[this.tableAdres.IdColumn]));
                 }
                 set {
                     this[this.tableAdres.IdColumn] = value;
@@ -1037,12 +1496,49 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GastRow GastRow {
+            public GastRow[] GetGastRows() {
+                if ((this.Table.ChildRelations["FK_Adres_Gast"] == null)) {
+                    return new GastRow[0];
+                }
+                else {
+                    return ((GastRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Adres_Gast"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TierRow : global::System.Data.DataRow {
+            
+            private TierDataTable tableTier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TierRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTier = ((TierDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
                 get {
-                    return ((GastRow)(this.GetParentRow(this.Table.ParentRelations["FK_Gast_Adres"])));
+                    return ((int)(this[this.tableTier.IdColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Gast_Adres"]);
+                    this[this.tableTier.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GastRow[] GetGastRows() {
+                if ((this.Table.ChildRelations["FK_Tier_Gast"] == null)) {
+                    return new GastRow[0];
+                }
+                else {
+                    return ((GastRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Tier_Gast"])));
                 }
             }
         }
@@ -1101,6 +1597,40 @@ namespace THWeddingPlanner.Data {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AdresRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TierRowChangeEvent : global::System.EventArgs {
+            
+            private TierRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRowChangeEvent(TierRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow Row {
                 get {
                     return this.eventRow;
                 }

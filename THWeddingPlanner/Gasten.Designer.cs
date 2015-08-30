@@ -31,13 +31,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gasten));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tsbAddGast = new System.Windows.Forms.ToolStripButton();
+            this.dgvGasten = new System.Windows.Forms.DataGridView();
+            this.weddingPlanData = new THWeddingPlanner.Data.WeddingPlan();
+            this.Voornaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Achternaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DieetAllergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bijzonderheden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsKind = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGasten)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weddingPlanData)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -45,8 +52,8 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dataGridView1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(466, 381);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvGasten);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(502, 381);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -54,7 +61,7 @@
             // toolStripContainer1.RightToolStripPanel
             // 
             this.toolStripContainer1.RightToolStripPanel.Controls.Add(this.toolStrip1);
-            this.toolStripContainer1.Size = new System.Drawing.Size(550, 406);
+            this.toolStripContainer1.Size = new System.Drawing.Size(586, 406);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -62,37 +69,90 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.tsbAddGast});
             this.toolStrip1.Location = new System.Drawing.Point(0, 3);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(84, 33);
             this.toolStrip1.TabIndex = 0;
             // 
-            // toolStripButton1
+            // tsbAddGast
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(82, 19);
-            this.toolStripButton1.Text = "Voeg gast toe";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolStripButton1.ToolTipText = "Voeg gast toe";
+            this.tsbAddGast.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAddGast.Image = ((System.Drawing.Image)(resources.GetObject("tsbAddGast.Image")));
+            this.tsbAddGast.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAddGast.Name = "tsbAddGast";
+            this.tsbAddGast.Size = new System.Drawing.Size(82, 19);
+            this.tsbAddGast.Text = "Voeg gast toe";
+            this.tsbAddGast.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.tsbAddGast.ToolTipText = "Voeg gast toe";
+            this.tsbAddGast.Click += new System.EventHandler(this.tsbAddGast_Click);
             // 
-            // dataGridView1
+            // dgvGasten
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(466, 381);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvGasten.AllowUserToAddRows = false;
+            this.dgvGasten.AllowUserToDeleteRows = false;
+            this.dgvGasten.AllowUserToOrderColumns = true;
+            this.dgvGasten.AutoGenerateColumns = false;
+            this.dgvGasten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGasten.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Voornaam,
+            this.Achternaam,
+            this.DieetAllergie,
+            this.Bijzonderheden,
+            this.IsKind});
+            this.dgvGasten.DataMember = "Gast";
+            this.dgvGasten.DataSource = this.weddingPlanData;
+            this.dgvGasten.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGasten.Location = new System.Drawing.Point(0, 0);
+            this.dgvGasten.Name = "dgvGasten";
+            this.dgvGasten.RowHeadersVisible = false;
+            this.dgvGasten.Size = new System.Drawing.Size(502, 381);
+            this.dgvGasten.TabIndex = 0;
+            // 
+            // weddingPlanData
+            // 
+            this.weddingPlanData.DataSetName = "WeddingPlan";
+            this.weddingPlanData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Voornaam
+            // 
+            this.Voornaam.DataPropertyName = "Voornaam";
+            this.Voornaam.HeaderText = "Voornaam";
+            this.Voornaam.Name = "Voornaam";
+            // 
+            // Achternaam
+            // 
+            this.Achternaam.DataPropertyName = "Achternaam";
+            this.Achternaam.HeaderText = "Achternaam";
+            this.Achternaam.Name = "Achternaam";
+            // 
+            // DieetAllergie
+            // 
+            this.DieetAllergie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DieetAllergie.DataPropertyName = "DieetAllergie";
+            this.DieetAllergie.HeaderText = "Dieet/Allergie";
+            this.DieetAllergie.Name = "DieetAllergie";
+            this.DieetAllergie.Width = 96;
+            // 
+            // Bijzonderheden
+            // 
+            this.Bijzonderheden.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Bijzonderheden.DataPropertyName = "Bijzonderheden";
+            this.Bijzonderheden.HeaderText = "Bijzonderheden";
+            this.Bijzonderheden.Name = "Bijzonderheden";
+            this.Bijzonderheden.Width = 105;
+            // 
+            // IsKind
+            // 
+            this.IsKind.DataPropertyName = "IsKind";
+            this.IsKind.HeaderText = "Kind?";
+            this.IsKind.Name = "IsKind";
             // 
             // Gasten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 406);
+            this.ClientSize = new System.Drawing.Size(586, 406);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "Gasten";
             this.Text = "Gasten";
@@ -103,7 +163,8 @@
             this.toolStripContainer1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGasten)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weddingPlanData)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -112,7 +173,13 @@
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripButton tsbAddGast;
+        private System.Windows.Forms.DataGridView dgvGasten;
+        private Data.WeddingPlan weddingPlanData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Voornaam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Achternaam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DieetAllergie;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bijzonderheden;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsKind;
     }
 }
