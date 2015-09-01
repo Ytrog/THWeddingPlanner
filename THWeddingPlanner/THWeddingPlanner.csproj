@@ -57,6 +57,7 @@
     <Compile Include="AddGast.Designer.cs">
       <DependentUpon>AddGast.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\DatasetFactory.cs" />
     <Compile Include="Data\WeddingPlan.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
