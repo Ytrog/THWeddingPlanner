@@ -196,6 +196,7 @@
             this.btnManageTiers.TabIndex = 22;
             this.btnManageTiers.Text = "Beheer niveaus";
             this.btnManageTiers.UseVisualStyleBackColor = true;
+            this.btnManageTiers.Click += new System.EventHandler(this.btnManageTiers_Click);
             // 
             // AddGast
             // 

@@ -79,6 +79,12 @@
     <Compile Include="Gasten.Designer.cs">
       <DependentUpon>Gasten.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageTiers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageTiers.Designer.cs">
+      <DependentUpon>ManageTiers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAdres.resx">
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gasten.resx">
       <DependentUpon>Gasten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageTiers.resx">
+      <DependentUpon>ManageTiers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

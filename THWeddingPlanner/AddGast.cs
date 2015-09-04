@@ -31,6 +31,7 @@ namespace THWeddingPlanner
             AddAdres addressForm = new AddAdres();
             addressForm.ShowDialog(this);
             FillAddressDropDown();
+            FillTierDropDown();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -52,6 +53,22 @@ namespace THWeddingPlanner
                 cmbAdres.Items.Add(new RowDecorator<THWeddingPlanner.Data.WeddingPlan.AdresRow>(a, x => string.Format("{0} {1}{2} ,{3}", x.Straatnaam, x.Huisnummer, x.Toevoeging, x.Plaats)));
             }
             
+        }
+
+        private void btnManageTiers_Click(object sender, EventArgs e)
+        {
+            ManageTiers tiersDialog = new ManageTiers();
+            tiersDialog.ShowDialog(this);
+            FillTierDropDown();
+        }
+
+        private void FillTierDropDown()
+        {
+            cmbTier.Items.Clear();
+            foreach (var t in DatasetFactory.WeddingPlan.Tier)
+            {
+                cmbTier.Items.Add(new RowDecorator<THWeddingPlanner.Data.WeddingPlan.TierRow>(t, x => string.Format("{0}", x.Naam)));
+            }
         }
     }
 }
