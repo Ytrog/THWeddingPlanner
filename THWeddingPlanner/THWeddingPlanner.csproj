@@ -58,6 +58,10 @@
       <DependentUpon>AddGast.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DatasetFactory.cs" />
+    <Compile Include="Data\RowDecorator.cs" />
+    <Compile Include="Data\WeddingPlan.cs">
+      <DependentUpon>WeddingPlan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\WeddingPlan.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -21,6 +21,7 @@ namespace THWeddingPlanner
         public AddGast(WeddingPlan.GastRow newRow): this()
         {
             Gast = newRow;
+            FillAddressDropDown();
         }
 
         public THWeddingPlanner.Data.WeddingPlan.GastRow Gast { get; private set; }
@@ -29,6 +30,7 @@ namespace THWeddingPlanner
         {
             AddAdres addressForm = new AddAdres();
             addressForm.ShowDialog(this);
+            FillAddressDropDown();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -40,6 +42,16 @@ namespace THWeddingPlanner
             Gast.IsKind = false;
             Gast.TierId = -1;
             Gast.Voornaam = "";
+        }
+
+        private void FillAddressDropDown()
+        {
+            cmbAdres.Items.Clear();
+            foreach (var a in DatasetFactory.WeddingPlan.Adres)
+            {
+                cmbAdres.Items.Add(new RowDecorator<THWeddingPlanner.Data.WeddingPlan.AdresRow>(a, x => string.Format("{0} {1}{2} ,{3}", x.Straatnaam, x.Huisnummer, x.Toevoeging, x.Plaats)));
+            }
+            
         }
     }
 }

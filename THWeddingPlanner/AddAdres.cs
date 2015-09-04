@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using THWeddingPlanner.Data;
 
 namespace THWeddingPlanner
 {
@@ -28,6 +29,11 @@ namespace THWeddingPlanner
                 tipError.Show("Voer alleen nummers in", txtHuisnummer, 0, -34, 4000);
                 return;
             }
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            DatasetFactory.WeddingPlan.Adres.AddAdresRow(txtStraatnaam.Text, txtHuisnummer.Text, txtToevoeging.Text, txtPostcode.Text, txtPlaats.Text, txtLand.Text);
         }
     }
 }
