@@ -18,5 +18,25 @@ namespace THWeddingPlanner
             dgvTiers.AutoGenerateColumns = false;
             dgvTiers.DataSource = Data.DatasetFactory.WeddingPlan.Tier;
         }
+
+        private void dgvTiers_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            Commit();
+        }
+
+        private void Commit()
+        {
+            Data.DatasetFactory.WeddingPlan.Tier.AcceptChanges();
+        }
+
+        private void dgvTiers_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            Commit();
+        }
+
+        private void ManageTiers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Commit();
+        }
     }
 }

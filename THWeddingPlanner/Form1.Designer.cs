@@ -61,7 +61,7 @@
             this.tsbGasten});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(144, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(113, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // tsbGasten
@@ -81,6 +81,7 @@
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "Form1";
             this.Text = "Wedding Planner";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);

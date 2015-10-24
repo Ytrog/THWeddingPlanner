@@ -46,6 +46,8 @@
             this.dgvTiers.RowHeadersVisible = false;
             this.dgvTiers.Size = new System.Drawing.Size(545, 313);
             this.dgvTiers.TabIndex = 0;
+            this.dgvTiers.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvTiers_RowsAdded);
+            this.dgvTiers.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvTiers_RowsRemoved);
             // 
             // Naam
             // 
@@ -68,6 +70,7 @@
             this.Controls.Add(this.dgvTiers);
             this.Name = "ManageTiers";
             this.Text = "ManageTiers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageTiers_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTiers)).EndInit();
             this.ResumeLayout(false);
 

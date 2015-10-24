@@ -22,5 +22,10 @@ namespace THWeddingPlanner
             Gasten gastenForm = new Gasten();
             gastenForm.ShowDialog(this);
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Persistence.PersistenceManagerFactory.Instance.Save(Data.DatasetFactory.WeddingPlan);
+        }
     }
 }

@@ -85,7 +85,9 @@
     <Compile Include="ManageTiers.Designer.cs">
       <DependentUpon>ManageTiers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Persistence\FileManager.cs" />
     <Compile Include="Persistence\IPersistenceManager.cs" />
+    <Compile Include="Persistence\PersistenceManagerFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAdres.resx">
