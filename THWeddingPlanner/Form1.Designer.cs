@@ -61,17 +61,16 @@
             this.tsbGasten});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(66, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(144, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // tsbGasten
             // 
-            this.tsbGasten.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.tsbGasten.Image = ((System.Drawing.Image)(resources.GetObject("tsbGasten.Image")));
             this.tsbGasten.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbGasten.Name = "tsbGasten";
-            this.tsbGasten.Size = new System.Drawing.Size(23, 22);
-            this.tsbGasten.Text = "tsbGasten";
+            this.tsbGasten.Size = new System.Drawing.Size(101, 22);
+            this.tsbGasten.Text = "Beheer gasten";
             this.tsbGasten.Click += new System.EventHandler(this.tsbGasten_Click);
             // 
             // Form1
