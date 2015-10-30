@@ -38,11 +38,11 @@ namespace THWeddingPlanner
         {
             Gast.Achternaam = txtAchternaam.Text;
             Gast.AdresId = -1; // TODO real vals
-            Gast.Bijzonderheden = "";
-            Gast.DieetAllergie = "";
-            Gast.IsKind = false;
+            Gast.Bijzonderheden = txtBijzonderheden.Text;
+            Gast.DieetAllergie = txtDieet.Text;
+            Gast.IsKind = cbKind.Checked;
             Gast.TierId = -1;
-            Gast.Voornaam = "";
+            Gast.Voornaam = txtVoornaam.Text;
         }
 
         private void FillAddressDropDown()
