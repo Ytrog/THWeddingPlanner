@@ -37,12 +37,43 @@ namespace THWeddingPlanner
         private void btnOk_Click(object sender, EventArgs e)
         {
             Gast.Achternaam = txtAchternaam.Text;
-            Gast.AdresId = -1; // TODO real vals
+            Gast.AdresId = GetAdresId(); 
             Gast.Bijzonderheden = txtBijzonderheden.Text;
             Gast.DieetAllergie = txtDieet.Text;
             Gast.IsKind = cbKind.Checked;
-            Gast.TierId = -1;
+            Gast.TierId = GetTierId();
             Gast.Voornaam = txtVoornaam.Text;
+        }
+
+        private int GetTierId()
+        {
+            return GetIdFromComboBox<THWeddingPlanner.Data.WeddingPlan.TierRow>(cmbTier);
+        }
+
+        private int GetAdresId()
+        {
+            //var item = cmbAdres.SelectedItem as RowDecorator<THWeddingPlanner.Data.WeddingPlan.AdresRow>;
+            //if (item == null)
+            //{
+            //    return -1;
+            //}
+
+            //return item.Row.Id;
+
+            return GetIdFromComboBox<THWeddingPlanner.Data.WeddingPlan.AdresRow>(cmbAdres);
+        }
+
+        private int GetIdFromComboBox<T>(ComboBox box) where T:DataRow
+        {
+            var item = box.SelectedItem as RowDecorator<T>;
+            if (item == null)
+            {
+                return -1;
+            }
+
+            dynamic row = item.Row;
+
+            return row.Id;
         }
 
         private void FillAddressDropDown()
