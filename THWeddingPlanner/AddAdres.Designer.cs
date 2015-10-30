@@ -52,7 +52,7 @@
             this.btnOk.Location = new System.Drawing.Point(4, 165);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 0;
+            this.btnOk.TabIndex = 6;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -63,7 +63,7 @@
             this.btnCancel.Location = new System.Drawing.Point(86, 165);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
@@ -126,21 +126,21 @@
             this.txtStraatnaam.Location = new System.Drawing.Point(84, 9);
             this.txtStraatnaam.Name = "txtStraatnaam";
             this.txtStraatnaam.Size = new System.Drawing.Size(277, 20);
-            this.txtStraatnaam.TabIndex = 8;
+            this.txtStraatnaam.TabIndex = 0;
             // 
             // txtPlaats
             // 
             this.txtPlaats.Location = new System.Drawing.Point(84, 113);
             this.txtPlaats.Name = "txtPlaats";
             this.txtPlaats.Size = new System.Drawing.Size(277, 20);
-            this.txtPlaats.TabIndex = 9;
+            this.txtPlaats.TabIndex = 4;
             // 
             // txtLand
             // 
             this.txtLand.Location = new System.Drawing.Point(84, 139);
             this.txtLand.Name = "txtLand";
             this.txtLand.Size = new System.Drawing.Size(277, 20);
-            this.txtLand.TabIndex = 13;
+            this.txtLand.TabIndex = 5;
             this.txtLand.Text = "Nederland";
             // 
             // txtPostcode
@@ -149,7 +149,7 @@
             this.txtPostcode.Mask = "0000 AA";
             this.txtPostcode.Name = "txtPostcode";
             this.txtPostcode.Size = new System.Drawing.Size(100, 20);
-            this.txtPostcode.TabIndex = 14;
+            this.txtPostcode.TabIndex = 3;
             // 
             // txtHuisnummer
             // 
@@ -157,7 +157,7 @@
             this.txtHuisnummer.Location = new System.Drawing.Point(84, 35);
             this.txtHuisnummer.Name = "txtHuisnummer";
             this.txtHuisnummer.Size = new System.Drawing.Size(100, 20);
-            this.txtHuisnummer.TabIndex = 15;
+            this.txtHuisnummer.TabIndex = 1;
             this.txtHuisnummer.Validating += new System.ComponentModel.CancelEventHandler(this.txtHuisnummer_Validating);
             // 
             // txtToevoeging
@@ -167,7 +167,7 @@
             this.txtToevoeging.Mask = "A";
             this.txtToevoeging.Name = "txtToevoeging";
             this.txtToevoeging.Size = new System.Drawing.Size(98, 20);
-            this.txtToevoeging.TabIndex = 16;
+            this.txtToevoeging.TabIndex = 2;
             // 
             // AddAdres
             // 

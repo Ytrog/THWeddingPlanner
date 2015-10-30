@@ -21,7 +21,7 @@ namespace THWeddingPlanner
 
         private void dgvTiers_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            Commit();
+            //Commit();
         }
 
         private void Commit()
@@ -31,7 +31,7 @@ namespace THWeddingPlanner
 
         private void dgvTiers_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            Commit();
+            //Commit();
         }
 
         private void ManageTiers_FormClosing(object sender, FormClosingEventArgs e)

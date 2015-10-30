@@ -37,7 +37,7 @@ namespace THWeddingPlanner
         private void btnOk_Click(object sender, EventArgs e)
         {
             Gast.Achternaam = txtAchternaam.Text;
-            Gast.AdresId = -1;
+            Gast.AdresId = -1; // TODO real vals
             Gast.Bijzonderheden = "";
             Gast.DieetAllergie = "";
             Gast.IsKind = false;

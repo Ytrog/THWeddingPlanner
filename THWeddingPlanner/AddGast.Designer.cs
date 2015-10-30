@@ -36,14 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddAddress = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBijzonderheden = new System.Windows.Forms.TextBox();
+            this.txtDieet = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTier = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbKind = new System.Windows.Forms.CheckBox();
             this.btnManageTiers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -85,7 +85,7 @@
             this.cmbAdres.Location = new System.Drawing.Point(82, 82);
             this.cmbAdres.Name = "cmbAdres";
             this.cmbAdres.Size = new System.Drawing.Size(276, 21);
-            this.cmbAdres.TabIndex = 4;
+            this.cmbAdres.TabIndex = 2;
             // 
             // label3
             // 
@@ -101,7 +101,7 @@
             this.btnAddAddress.Location = new System.Drawing.Point(364, 82);
             this.btnAddAddress.Name = "btnAddAddress";
             this.btnAddAddress.Size = new System.Drawing.Size(114, 23);
-            this.btnAddAddress.TabIndex = 6;
+            this.btnAddAddress.TabIndex = 3;
             this.btnAddAddress.Text = "Voeg adres toe";
             this.btnAddAddress.UseVisualStyleBackColor = true;
             this.btnAddAddress.Click += new System.EventHandler(this.btnAddAddress_Click);
@@ -115,21 +115,21 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Bijzonderheden";
             // 
-            // textBox3
+            // txtBijzonderheden
             // 
-            this.textBox3.Location = new System.Drawing.Point(19, 327);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(451, 116);
-            this.textBox3.TabIndex = 14;
+            this.txtBijzonderheden.Location = new System.Drawing.Point(19, 327);
+            this.txtBijzonderheden.Multiline = true;
+            this.txtBijzonderheden.Name = "txtBijzonderheden";
+            this.txtBijzonderheden.Size = new System.Drawing.Size(451, 116);
+            this.txtBijzonderheden.TabIndex = 8;
             // 
-            // textBox4
+            // txtDieet
             // 
-            this.textBox4.Location = new System.Drawing.Point(19, 192);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(451, 116);
-            this.textBox4.TabIndex = 16;
+            this.txtDieet.Location = new System.Drawing.Point(19, 192);
+            this.txtDieet.Multiline = true;
+            this.txtDieet.Name = "txtDieet";
+            this.txtDieet.Size = new System.Drawing.Size(451, 116);
+            this.txtDieet.TabIndex = 7;
             // 
             // label6
             // 
@@ -146,7 +146,7 @@
             this.cmbTier.Location = new System.Drawing.Point(81, 152);
             this.cmbTier.Name = "cmbTier";
             this.cmbTier.Size = new System.Drawing.Size(277, 21);
-            this.cmbTier.TabIndex = 17;
+            this.cmbTier.TabIndex = 5;
             // 
             // label7
             // 
@@ -178,22 +178,22 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbKind
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(19, 116);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 17);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "Kind?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbKind.AutoSize = true;
+            this.cbKind.Location = new System.Drawing.Point(19, 116);
+            this.cbKind.Name = "cbKind";
+            this.cbKind.Size = new System.Drawing.Size(53, 17);
+            this.cbKind.TabIndex = 4;
+            this.cbKind.Text = "Kind?";
+            this.cbKind.UseVisualStyleBackColor = true;
             // 
             // btnManageTiers
             // 
             this.btnManageTiers.Location = new System.Drawing.Point(365, 149);
             this.btnManageTiers.Name = "btnManageTiers";
             this.btnManageTiers.Size = new System.Drawing.Size(113, 23);
-            this.btnManageTiers.TabIndex = 22;
+            this.btnManageTiers.TabIndex = 6;
             this.btnManageTiers.Text = "Beheer niveaus";
             this.btnManageTiers.UseVisualStyleBackColor = true;
             this.btnManageTiers.Click += new System.EventHandler(this.btnManageTiers_Click);
@@ -204,14 +204,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 487);
             this.Controls.Add(this.btnManageTiers);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbKind);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbTier);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtDieet);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtBijzonderheden);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnAddAddress);
             this.Controls.Add(this.label3);
@@ -237,14 +237,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddAddress;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBijzonderheden;
+        private System.Windows.Forms.TextBox txtDieet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbTier;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbKind;
         private System.Windows.Forms.Button btnManageTiers;
     }
 }
