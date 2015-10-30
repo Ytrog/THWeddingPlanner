@@ -25,6 +25,7 @@ namespace THWeddingPlanner
             if ((addGastForm.ShowDialog(this) == System.Windows.Forms.DialogResult.OK))
             {
                 DatasetFactory.WeddingPlan.Gast.AddGastRow(addGastForm.Gast); // TODO nettere oplossing
+                DatasetFactory.WeddingPlan.Gast.AcceptChanges();
             }
         }
     }

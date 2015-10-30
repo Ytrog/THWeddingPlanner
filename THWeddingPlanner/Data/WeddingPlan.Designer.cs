@@ -30,9 +30,9 @@ namespace THWeddingPlanner.Data {
         
         private TierDataTable tableTier;
         
-        private global::System.Data.DataRelation relationFK_Tier_Gast;
-        
         private global::System.Data.DataRelation relationFK_Adres_Gast;
+        
+        private global::System.Data.DataRelation relationFK_Tier_Gast;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -246,8 +246,8 @@ namespace THWeddingPlanner.Data {
                     this.tableTier.InitVars();
                 }
             }
-            this.relationFK_Tier_Gast = this.Relations["FK_Tier_Gast"];
             this.relationFK_Adres_Gast = this.Relations["FK_Adres_Gast"];
+            this.relationFK_Tier_Gast = this.Relations["FK_Tier_Gast"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -265,13 +265,6 @@ namespace THWeddingPlanner.Data {
             this.tableTier = new TierDataTable();
             base.Tables.Add(this.tableTier);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Tier_Gast", new global::System.Data.DataColumn[] {
-                        this.tableTier.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGast.TierIdColumn});
-            this.tableGast.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Adres_Gast", new global::System.Data.DataColumn[] {
                         this.tableAdres.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableGast.AdresIdColumn});
@@ -279,14 +272,21 @@ namespace THWeddingPlanner.Data {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK_Tier_Gast = new global::System.Data.DataRelation("FK_Tier_Gast", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Tier_Gast", new global::System.Data.DataColumn[] {
                         this.tableTier.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableGast.TierIdColumn}, false);
-            this.Relations.Add(this.relationFK_Tier_Gast);
+                        this.tableGast.TierIdColumn});
+            this.tableGast.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_Adres_Gast = new global::System.Data.DataRelation("FK_Adres_Gast", new global::System.Data.DataColumn[] {
                         this.tableAdres.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableGast.AdresIdColumn}, false);
             this.Relations.Add(this.relationFK_Adres_Gast);
+            this.relationFK_Tier_Gast = new global::System.Data.DataRelation("FK_Tier_Gast", new global::System.Data.DataColumn[] {
+                        this.tableTier.IdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableGast.TierIdColumn}, false);
+            this.Relations.Add(this.relationFK_Tier_Gast);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1241,8 +1241,6 @@ namespace THWeddingPlanner.Data {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
-                this.columnId.AutoIncrementSeed = -1;
-                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
             }
@@ -1500,23 +1498,23 @@ namespace THWeddingPlanner.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TierRow TierRow {
-                get {
-                    return ((TierRow)(this.GetParentRow(this.Table.ParentRelations["FK_Tier_Gast"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Tier_Gast"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AdresRow AdresRow {
                 get {
                     return ((AdresRow)(this.GetParentRow(this.Table.ParentRelations["FK_Adres_Gast"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Adres_Gast"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TierRow TierRow {
+                get {
+                    return ((TierRow)(this.GetParentRow(this.Table.ParentRelations["FK_Tier_Gast"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Tier_Gast"]);
                 }
             }
             
