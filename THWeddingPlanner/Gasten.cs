@@ -16,7 +16,9 @@ namespace THWeddingPlanner
         public Gasten()
         {
             InitializeComponent();
-            weddingPlanData = DatasetFactory.WeddingPlan;
+            //weddingPlanData = DatasetFactory.WeddingPlan;
+            dgvGasten.AutoGenerateColumns = false;
+            ReloadDataSource();
         }
 
         private void tsbAddGast_Click(object sender, EventArgs e)
@@ -26,7 +28,15 @@ namespace THWeddingPlanner
             {
                 DatasetFactory.WeddingPlan.Gast.AddGastRow(addGastForm.Gast); // TODO nettere oplossing
                 DatasetFactory.WeddingPlan.Gast.AcceptChanges();
+                ReloadDataSource();
             }
+        }
+
+        private void ReloadDataSource()
+        {
+            dgvGasten.DataSource = null;
+            dgvGasten.DataSource = DatasetFactory.WeddingPlan.Gast;
+            dgvGasten.Refresh();
         }
     }
 }

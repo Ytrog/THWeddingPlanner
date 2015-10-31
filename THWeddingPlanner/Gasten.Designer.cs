@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Gasten));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbAddGast = new System.Windows.Forms.ToolStripButton();
             this.dgvGasten = new System.Windows.Forms.DataGridView();
             this.weddingPlanData = new THWeddingPlanner.Data.WeddingPlan();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbAddGast = new System.Windows.Forms.ToolStripButton();
             this.Voornaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Achternaam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DieetAllergie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,19 +42,21 @@
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.RightToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weddingPlanData)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
             // 
+            this.toolStripContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgvGasten);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(502, 381);
-            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             // 
@@ -64,6 +66,30 @@
             this.toolStripContainer1.Size = new System.Drawing.Size(586, 406);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
+            // 
+            // dgvGasten
+            // 
+            this.dgvGasten.AllowUserToAddRows = false;
+            this.dgvGasten.AllowUserToDeleteRows = false;
+            this.dgvGasten.AllowUserToOrderColumns = true;
+            this.dgvGasten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGasten.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Voornaam,
+            this.Achternaam,
+            this.DieetAllergie,
+            this.Bijzonderheden,
+            this.IsKind});
+            this.dgvGasten.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGasten.Location = new System.Drawing.Point(0, 0);
+            this.dgvGasten.Name = "dgvGasten";
+            this.dgvGasten.RowHeadersVisible = false;
+            this.dgvGasten.Size = new System.Drawing.Size(502, 381);
+            this.dgvGasten.TabIndex = 0;
+            // 
+            // weddingPlanData
+            // 
+            this.weddingPlanData.DataSetName = "WeddingPlan";
+            this.weddingPlanData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStrip1
             // 
@@ -87,33 +113,6 @@
             this.tsbAddGast.ToolTipText = "Voeg gast toe";
             this.tsbAddGast.Click += new System.EventHandler(this.tsbAddGast_Click);
             // 
-            // dgvGasten
-            // 
-            this.dgvGasten.AllowUserToAddRows = false;
-            this.dgvGasten.AllowUserToDeleteRows = false;
-            this.dgvGasten.AllowUserToOrderColumns = true;
-            this.dgvGasten.AutoGenerateColumns = false;
-            this.dgvGasten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGasten.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Voornaam,
-            this.Achternaam,
-            this.DieetAllergie,
-            this.Bijzonderheden,
-            this.IsKind});
-            this.dgvGasten.DataMember = "Gast";
-            this.dgvGasten.DataSource = this.weddingPlanData;
-            this.dgvGasten.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGasten.Location = new System.Drawing.Point(0, 0);
-            this.dgvGasten.Name = "dgvGasten";
-            this.dgvGasten.RowHeadersVisible = false;
-            this.dgvGasten.Size = new System.Drawing.Size(502, 381);
-            this.dgvGasten.TabIndex = 0;
-            // 
-            // weddingPlanData
-            // 
-            this.weddingPlanData.DataSetName = "WeddingPlan";
-            this.weddingPlanData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // Voornaam
             // 
             this.Voornaam.DataPropertyName = "Voornaam";
@@ -136,11 +135,10 @@
             // 
             // Bijzonderheden
             // 
-            this.Bijzonderheden.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Bijzonderheden.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Bijzonderheden.DataPropertyName = "Bijzonderheden";
             this.Bijzonderheden.HeaderText = "Bijzonderheden";
             this.Bijzonderheden.Name = "Bijzonderheden";
-            this.Bijzonderheden.Width = 105;
             // 
             // IsKind
             // 
@@ -161,10 +159,10 @@
             this.toolStripContainer1.RightToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGasten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weddingPlanData)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
