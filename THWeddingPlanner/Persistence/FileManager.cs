@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ namespace THWeddingPlanner.Persistence
         private const string _path = @"C:\test\weddingplanner";
         public void Save(Data.WeddingPlan weddingPlan)
         {
-            Save(weddingPlan, _path);
+            string path = Path.Combine(_path, "plan.xml");
+            Save(weddingPlan, path);
         }
 
         public void Save(Data.WeddingPlan weddingPlan, string path)
@@ -21,7 +23,8 @@ namespace THWeddingPlanner.Persistence
 
         public Data.WeddingPlan Load()
         {
-            return Load(_path);
+            string path = Path.Combine(_path, "plan.xml");
+            return Load(path);
         }
 
         public Data.WeddingPlan Load(string path)
