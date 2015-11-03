@@ -22,6 +22,7 @@ namespace THWeddingPlanner
         {
             Gast = newRow;
             FillAddressDropDown();
+            FillTierDropDown();
         }
 
         public THWeddingPlanner.Data.WeddingPlan.GastRow Gast { get; private set; }
@@ -83,7 +84,16 @@ namespace THWeddingPlanner
             {
                 cmbAdres.Items.Add(new RowDecorator<THWeddingPlanner.Data.WeddingPlan.AdresRow>(a, x => string.Format("{0} {1}{2} ,{3}", x.Straatnaam, x.Huisnummer, x.Toevoeging, x.Plaats)));
             }
-            
+
+            SelectLastItem(cmbAdres);
+        }
+
+        private void SelectLastItem(ComboBox box)
+        {
+            if (box.Items.Count > 0)
+            {
+                box.SelectedIndex = box.Items.Count - 1;
+            }
         }
 
         private void btnManageTiers_Click(object sender, EventArgs e)
@@ -100,6 +110,8 @@ namespace THWeddingPlanner
             {
                 cmbTier.Items.Add(new RowDecorator<THWeddingPlanner.Data.WeddingPlan.TierRow>(t, x => string.Format("{0}", x.Naam)));
             }
+
+            SelectLastItem(cmbTier);
         }
     }
 }
