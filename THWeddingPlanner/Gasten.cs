@@ -23,7 +23,7 @@ namespace THWeddingPlanner
 
         private void tsbAddGast_Click(object sender, EventArgs e)
         {
-            AddGast addGastForm = new AddGast(weddingPlanData.Gast.NewGastRow());
+            AddGast addGastForm = new AddGast(Data.DatasetFactory.WeddingPlan.Gast.NewGastRow());
             if ((addGastForm.ShowDialog(this) == System.Windows.Forms.DialogResult.OK))
             {
                 DatasetFactory.WeddingPlan.Gast.AddGastRow(addGastForm.Gast); // TODO nettere oplossing
