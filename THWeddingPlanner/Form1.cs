@@ -27,5 +27,10 @@ namespace THWeddingPlanner
         {
             Persistence.PersistenceManagerFactory.Instance.Save(Data.DatasetFactory.WeddingPlan);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Persistence.PersistenceManagerFactory.Instance.Load();
+        }
     }
 }

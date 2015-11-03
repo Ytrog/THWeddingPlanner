@@ -29,8 +29,8 @@ namespace THWeddingPlanner.Persistence
 
         public Data.WeddingPlan Load(string path)
         {
-            var plan = new Data.WeddingPlan();
-            plan.ReadXml(path, System.Data.XmlReadMode.Auto);
+            var plan = Data.DatasetFactory.WeddingPlan;
+            plan.ReadXml(path, System.Data.XmlReadMode.IgnoreSchema);
             return plan;
         }
     }
