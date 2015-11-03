@@ -9,7 +9,7 @@ namespace THWeddingPlanner.Persistence
 {
     class FileManager : IPersistenceManager
     {
-        private const string _path = @"C:\test\weddingplanner";
+        private const string _path = @".";
         public void Save(Data.WeddingPlan weddingPlan)
         {
             string path = Path.Combine(_path, "plan.xml");
